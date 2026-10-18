@@ -31,11 +31,32 @@
 .s-bar .s-btn--sm{border-radius:999px;padding:0 1.3em;min-height:44px}
 .s-hero__photo{position:relative}
 .s-hero__photo img{border-radius:28px}
-.s-chip{position:absolute;left:14px;bottom:14px;max-width:calc(100% - 28px);padding:.6em 1.1em;border-radius:999px;font-size:.88rem;font-weight:500;background:color-mix(in srgb,var(--c-surface) 78%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid color-mix(in srgb,#fff 70%,transparent);color:var(--c-ink)}
-.s-chip::before{content:"";display:inline-block;width:.6em;height:.6em;border-radius:50%;background:var(--c-accent);margin-right:.6em}
+.s-float{position:absolute;left:14px;bottom:14px;max-width:calc(100% - 28px);padding:.6em 1.1em;border-radius:999px;font-size:.88rem;font-weight:500;background:color-mix(in srgb,var(--c-surface) 78%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid color-mix(in srgb,#fff 70%,transparent);color:var(--c-ink)}
+.s-float::before{content:"";display:inline-block;width:.6em;height:.6em;border-radius:50%;background:var(--c-accent);margin-right:.6em}
 @media(max-width:860px){.s-bar__nav{display:none}.s-bar{padding-left:16px}}
 .s-sign{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:14px;font-size:15px}
 .s-sign img{width:44px;height:44px;border-radius:10px;display:block}
+</style>
+<style>
+/* витрина машин: по мотивам YukoHealth storefront (21st.dev) */
+.s-soft{color:var(--c-accent);font-weight:500}
+.s-vit__photo{position:relative;margin:0 0 36px;border-radius:32px;overflow:hidden;min-height:340px}
+.s-vit__photo>img{display:block;width:100%;height:clamp(340px,46vw,520px);object-fit:cover}
+.s-vit__notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(440px,calc(100% - 40px));background:var(--c-canvas);padding:20px 26px 24px;border-radius:0 0 28px 28px;text-align:center;font-size:1rem;line-height:1.5}
+.s-vit__notch p{margin:0}
+.s-float--x{display:flex;align-items:center;gap:.4em;padding-right:.5em}
+.s-float--x button{border:0;background:transparent;font:inherit;font-size:1.3rem;line-height:1;cursor:pointer;color:var(--c-ink-soft);min-width:36px;min-height:36px}
+.s-float[hidden]{display:none}
+.s-cars{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.s-car{background:var(--c-surface);border:1px solid var(--hair);border-radius:28px;padding:20px 22px 22px;display:grid;gap:8px;align-content:start}
+.s-car h3{font-size:1.25rem;margin:10px 0 0}
+.s-car p{margin:0;color:var(--c-ink-soft);font-size:.95rem}
+.s-car .s-car__price{color:var(--c-ink);font-weight:700;font-size:1.15rem;margin-top:8px}
+.s-car__price small{font-weight:500;color:var(--c-ink-soft);font-size:.85rem}
+.s-tag{justify-self:start;padding:.3em .9em;border-radius:999px;background:color-mix(in srgb,var(--c-ink) 6%,transparent);font-size:.82rem;font-weight:500}
+.s-car__go{justify-self:start;margin-top:6px;padding:.55em 1.2em;border-radius:999px;background:color-mix(in srgb,var(--c-accent) 12%,transparent);color:var(--c-accent);font-weight:700;text-decoration:none;font-size:.9rem;min-height:44px;display:inline-flex;align-items:center}
+.s-faq details{border-radius:24px}
+@media(max-width:600px){.s-vit__notch{padding:16px 18px 20px;font-size:.92rem}.s-vit__photo>img{height:380px}}
 </style>
 </head>
 <body class="s-prod" id="top" data-wa="" data-tg="+79588823488" data-max="">
@@ -51,11 +72,11 @@
   <section class="s-hero">
     <div class="s-hero__text">
       <p class="s-eyebrow">Переезды · грузчики · газель</p>
-      <h1>Переезд в Перми – машина и грузчики к вашему часу</h1>
+      <h1>Переезд в Перми – <span class="s-soft">машина и грузчики к вашему часу</span></h1>
       <p class="s-lead">Скажите, откуда и куда едем и что везём – назовём машину, ставку часа и время подачи. Заказ подтверждаем до выезда.</p>
       <ul class="s-ticks"><li>Машина и грузчики – в одной заявке</li><li>Ставка часа названа до выезда</li><li>Занесём, куда скажете, и соберём мебель</li></ul>
       
-      <figure class="s-hero__photo"><img class="" src="assets/cargo.webp" alt="Грузчики несут шкаф в стрейче к фургону" loading="lazy" decoding="async"><span class="s-chip">Ставка часа – до выезда</span></figure>
+      <figure class="s-hero__photo"><img class="" src="assets/cargo.webp" alt="Грузчики несут шкаф в стрейче к фургону" loading="lazy" decoding="async"><span class="s-float">Ставка часа – до выезда</span></figure>
     </div>
     <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-calc data-base="0" data-min="0" data-min-note="минимальный заказ" data-per="{&quot;car&quot;:&quot;hours&quot;,&quot;movers&quot;:&quot;hours&quot;}" data-message="Здравствуйте! Хочу рассчитать переезд: {выбор}. Предварительно {итого}. Когда можете подать машину?" onsubmit="return false">
       <h2 class="s-widget__title">Сколько стоит переезд</h2>
@@ -82,17 +103,18 @@
     </div>
   </section>
 
+  <section class="s-section s-reveal s-vit" id="cars">
+    <figure class="s-vit__photo"><img src="assets/road.webp" alt="Фургон на городской трассе в утреннем свете" loading="lazy" decoding="async">
+      <div class="s-vit__notch"><p>Назовём машину, ставку часа и время подачи до выезда. Выбирайте по объёму – остальное подскажем.</p></div>
+      <span class="s-float s-float--x" data-chip>Ставка часа не набегает на месте<button type="button" aria-label="Скрыть" data-chip-x>×</button></span>
+    </figure>
+    <header class="s-section__head"><h2>Какая машина вам подойдёт</h2></header>
+    <ul class="s-cars"><li class="s-car"><span class="s-tag">≈ 3 м³</span><h3>Каблук</h3><p>около 3 м³, до 700 кг</p><p class="s-car__price">от 800 ₽ <small>в час</small></p><a class="s-car__go" href="#widget">Рассчитать</a></li><li class="s-car"><span class="s-tag">однушка</span><h3>Фургон 3 метра</h3><p>однушка, около 10 м³</p><p class="s-car__price">от 1 000 ₽ <small>в час</small></p><a class="s-car__go" href="#widget">Рассчитать</a></li><li class="s-car"><span class="s-tag">двушка</span><h3>Фургон 4 метра</h3><p>двушка, около 16 м³</p><p class="s-car__price">от 1 200 ₽ <small>в час</small></p><a class="s-car__go" href="#widget">Рассчитать</a></li><li class="s-car"><span class="s-tag">трёшка или офис</span><h3>Фургон 5 метров</h3><p>трёшка или офис, до 3 т</p><p class="s-car__price">от 1 600 ₽ <small>в час</small></p><a class="s-car__go" href="#widget">Рассчитать</a></li></ul>
+  </section>
+
   <section class="s-section s-reveal" id="prices">
     <header class="s-section__head"><h2>Ставка часа – до выезда</h2><p>Машину подбираем по объёму. Час считаем от подачи до конца разгрузки. Ставки ниже – пример для демонстрации, точную называем при заказе.</p></header>
-    <div class="s-board"><div class="s-board__group">
-      <h3 class="s-board__title">Машины</h3>
-      <ul class="s-board__list">
-        <li class="s-board__row"><span class="s-board__name">Каблук<em>около 3 м³, до 700 кг</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 800 ₽<small> в час</small></span></li>
-        <li class="s-board__row"><span class="s-board__name">Фургон 3 метра<em>однушка, около 10 м³</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 1 000 ₽<small> в час</small></span></li>
-        <li class="s-board__row"><span class="s-board__name">Фургон 4 метра<em>двушка, около 16 м³</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 1 200 ₽<small> в час</small></span></li>
-        <li class="s-board__row"><span class="s-board__name">Фургон 5 метров<em>трёшка или офис, до 3 т</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 1 600 ₽<small> в час</small></span></li>
-      </ul>
-    </div>
+    <div class="s-board">
 <div class="s-board__group">
       <h3 class="s-board__title">Грузчики и остальное</h3>
       <ul class="s-board__list">
@@ -154,5 +176,6 @@
 <footer class="s-foot"><p>Лидер переездов · Пермь</p><p>Лидер переездов: квартирные и офисные переезды, грузчики и газель по Перми</p><p class="s-sign"><img src="assets/brand-mark.webp" alt="" width="44" height="44">Автор сайта: Антонина Логутенкова</p></footer>
 <nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Рассчитать переезд</a><a class="s-btn s-btn--ghost" href="tel:+73422348858">Позвонить</a></nav>
 <script src="style.js" defer></script>
+<script>document.querySelectorAll("[data-chip-x]").forEach(b=>b.addEventListener("click",()=>{b.closest(".s-float").hidden=true}))</script>
 </body>
 </html>
